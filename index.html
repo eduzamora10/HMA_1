@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawthorne's Mighty Achievers!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #ebee9e 0%, #f5aa1e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container for the grid */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px; /* Optional max-width */
+        }
+
+        /* Styling for images */
+        .container img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            border: 5px solid black;
+            cursor: pointer;
+            transition: transform 0.3s, border 0.3s;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 20px; /* Add space between h1 and the grid */
+        }
+
+        /* Hover effect for images */
+        .container img:hover {
+            transform: scale(1.05);
+            border: 8px solid black;
+        }
+
+        /* Optional: Adjust grid layout for smaller screens if needed */
+        @media (max-width: 768px) {
+            .container img {
+                max-width: 100%;
+            }
+
+            h1{
+                font-size: x-large;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container img {
+                max-width: 100%;
+            }
+
+            h1{
+                font-size: large;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold text-body-emphasis">Hawthorne's Mighty Achievers</h1>
+        <div class="container">
+            <!-- 9 Images for the 3x3 Grid -->
+            <img class="confettiImage" src="./images/IMG_5135.jpg" alt="Image 1">
+            <img class="confettiImage"  src="./images/IMG_5136.jpg" alt="Image 2">
+            <img class="confettiImage"  src="./images/IMG_5138.jpg" alt="Image 3">
+            <img class="confettiImage"  src="./images/IMG_5139.jpg" alt="Image 4">
+            <img class="confettiImage"  src="./images/IMG_5140.jpg" alt="Image 5">
+            <img class="confettiImage"  src="./images/IMG_5143.jpg" alt="Image 6">
+            <img class="confettiImage"  src="./images/IMG_5142.jpg" alt="Image 7">
+            <img class="confettiImage"  src="./images/IMG_5144.jpg" alt="Image 8">
+            <img class="confettiImage"  src="./images/IMG_5145.jpg" alt="Image 9">
+        </div>
+      </div>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        // Select the image
+        const images = document.querySelectorAll('.confettiImage');
+
+        // Add click event listener to the image
+        images.forEach(function(image) {
+            image.addEventListener('click', function() {
+                // Trigger confetti effect
+                confetti({
+                    particleCount: 200,
+                    spread: 200,
+                    origin: { y: 0.6 }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
